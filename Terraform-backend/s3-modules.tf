@@ -21,3 +21,26 @@ resource "aws_dynamodb_table" "tf_lock" {
     Name = "Terraform Lock Table"
    }
  }
+
+ resource "aws_s3_bucket_versioning" "my_versioncontrol" {
+  bucket = aws_s3_bucket.s3_bucket.id
+  versioning_configuration {
+    status = var.versioning
+  }
+}
+
+resource "aws_kms_key" "backendKMS" {
+  description      = "This key is used to encrypt bucket objects"
+  deletion_window_in_days = var.kms_window
+}
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "config" {
+  bucket = aws_s3_bucket.s3_bucket.id
+
+  rule {
+    apply_server_side_encryption_by_default {
+      kms_master_key_id = aws_kms_key.backendKMS.arn
+      sse_algorithm     = var.algorithm
+     }
+   }
+ }
