@@ -7,9 +7,8 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "bootcamp-25-oyin"
+    bucket = "bootcamp-19198-oyin"
     key = "terraform/backend.tfstate"
-    dynamodb_table = "terraform-lock"
     region = "us-east-1"
  }
 }
