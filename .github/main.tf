@@ -1,3 +1,3 @@
 module "Terraform-backend" {
-  source = ".../Terraform-backend"
+  source = "../Terraform-backend"
 }
