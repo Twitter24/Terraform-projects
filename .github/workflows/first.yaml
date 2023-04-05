@@ -20,7 +20,7 @@ jobs:
          print(platform.processor())
        shell: python
   run-windows-commands:
-    runs-on: windows-lastest
+    runs-on: windows-latest
     steps:
       - name: Directory
         run: pwd
