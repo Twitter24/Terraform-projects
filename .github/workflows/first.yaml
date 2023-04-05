@@ -4,7 +4,7 @@ on:
   - push
 
 jobs: 
-  run-shell-commands:
+  terraform:
     runs-on: ubuntu-latest
     steps:
      - name: Checkout
@@ -13,10 +13,9 @@ jobs:
        uses: hashicorp/setup-terraform@v2
        with: 
          terraform_version: 1.1.9
-     - name: Terraform init
-       run: terraform init   
-     - name: Multi line string
+     - name: Terraform workflow
        run: |
-         pwd
-         node -v
-         ls -a
+          terraform init 
+          terraform validate
+          terraform apply
+     
