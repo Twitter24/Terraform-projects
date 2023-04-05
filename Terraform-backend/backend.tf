@@ -6,11 +6,11 @@ terraform {
       version = "~>3.0"
     }
   }
-  backend "s3" {
+  /*backend "s3" {
     bucket = "bootcamp-19198-oyin"
     key = "terraform/backend.tfstate"
     region = "us-east-1"
- }
+ }*/
 }
 
 provider "aws" {
