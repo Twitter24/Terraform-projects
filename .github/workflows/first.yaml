@@ -17,11 +17,14 @@ jobs:
        uses: hashicorp/setup-terraform@v2
        with: 
          terraform_version: 1.1.9
-     - name: Terraform workflow
-       run: |
-          terraform init 
-          terraform validate
-          terraform plan
-          terraform apply -auto-approve
-          terraform destroy -auto-approve
+     - name: Terraform init
+       run: terraform init
+     - name: Terraform validate
+       run: terraform validate
+     - name: Terraform plan
+       run: terraform plan
+     - name: Terraform apply 
+       run: terraform apply -auto-approve
+     #- name: Terraform destroy 
+      # run: terraform destroy -auto-approve
      
