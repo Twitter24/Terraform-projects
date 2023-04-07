@@ -2,3 +2,7 @@ terraform.tfstate
 terraform.tfstate.backup
 .terraform
 .terraform.lock.hcl
+node_modules/
+release.config.js
+package.json
+package-lock.json
