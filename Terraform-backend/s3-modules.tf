@@ -4,7 +4,7 @@ resource "aws_kms_key" "backendKMS" {
 
 resource "random_integer" "random" {
   min = 1
-  max = 50000
+  max = 100
 }
 
 resource "aws_s3_bucket" "s3_bucket" {
