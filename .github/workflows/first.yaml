@@ -31,7 +31,7 @@ jobs:
      - name: release
        run: npx semantic-release
        env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         TOKEN: ${{ secrets.TOKEN }}
      #- name: Terraform apply 
        #run: terraform apply -auto-approve
      #- name: Terraform destroy 
